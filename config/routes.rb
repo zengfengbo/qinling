@@ -1,4 +1,5 @@
 Qinling::Application.routes.draw do
+  resources :users
   get "users/new"
   # match "/", to: 'static_pages#home', via: 'get'
   root to: 'static_pages#home'
