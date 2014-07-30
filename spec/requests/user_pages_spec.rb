@@ -19,8 +19,8 @@ describe "UserPages" do
 
     describe 'with invalid infomation' do
       it "should not create a user" do 
-        pending "todo"
-        # expect {click_button submit}.not_to change(User, :count)
+        # pending "todo"
+        expect {click_button submit}.not_to change(User, :count)
       end
     end
     describe 'with valid infomation' do

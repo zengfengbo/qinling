@@ -89,6 +89,7 @@ foo@bar_baz.com foo@bar+baz.com]
       user_with_same_email.email = @user.email.upcase
     end
     it {should_not be_valid}
+
   end
 end
 
