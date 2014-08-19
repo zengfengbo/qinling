@@ -1,12 +1,31 @@
-<div class="center hero-unit">
-  <h1>Qinling</h1>
-  <h2>Hi,Everyone.</h2>
-  <p>I am Qinling.</p>
-  <p>I work at <a href="http://www.e5421.com/">广东口腔医院</a></p>
-  <% 1.times do |i|%>
-    <%= "I am #{i}."*30 %>
-    <br>
-  <% end %>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary"%>
-</div>
-<%= link_to image_tag("rails.png", alt: "Rails") %>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to the Sample App</h1>
+
+    <h2>
+      This is the home page for the
+      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </div>
+
+  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<% end %>
